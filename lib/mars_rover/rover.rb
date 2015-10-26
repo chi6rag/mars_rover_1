@@ -19,6 +19,10 @@ module MarsRover
       end
     end
 
+    def coordinates
+      [@x, @y, @heading]
+    end
+
     private
     def turn_left
       dir_index = ["N", "E", "S", "W"].find_index { |dir| dir == @heading }

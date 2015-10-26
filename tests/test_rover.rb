@@ -52,4 +52,9 @@ class RoverTest < Test::Unit::TestCase
     assert_equal rover.instance_eval("@y"), 1
     assert_equal rover.instance_eval("@heading"), "E"
   end
+
+  def test_coordinates_for_rover_returns_its_current_coordinates
+    rover = MarsRover::Rover.new(3, 3, "E")
+    assert_equal rover.coordinates, [3, 3, "E"]
+  end
 end
