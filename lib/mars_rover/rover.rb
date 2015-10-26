@@ -11,6 +11,8 @@ module MarsRover
         case instruction
         when "L"
           turn_left
+        when "R"
+          turn_right
         end
       end
     end
@@ -19,6 +21,11 @@ module MarsRover
     def turn_left
       dir_index = ["N", "E", "S", "W"].find_index { |dir| dir == @heading }
       @heading = ["N", "E", "S", "W"][ (dir_index-1) % 4 ]
+    end
+
+    def turn_right
+      dir_index = ["N", "E", "S", "W"].find_index { |dir| dir == @heading }
+      @heading = ["N", "E", "S", "W"][ (dir_index+1) % 4 ]
     end
   end
 end

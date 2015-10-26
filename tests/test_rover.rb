@@ -22,4 +22,10 @@ class RoverTest < Test::Unit::TestCase
     rover.execute "L"
     assert_equal rover.instance_eval("@heading"), "W"
   end
+
+  def test_execute_with_right_instructions_turns_rover_right
+    rover = MarsRover::Rover.new(4,5, "N")
+    rover.execute "R"
+    assert_equal rover.instance_eval("@heading"), "E"
+  end
 end
