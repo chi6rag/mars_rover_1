@@ -5,5 +5,8 @@ module MarsRover
       @y = y
       @heading = heading
     end
+
+    def execute *instructions
+    end
   end
 end
