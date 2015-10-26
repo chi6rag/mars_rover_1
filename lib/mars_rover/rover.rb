@@ -13,6 +13,8 @@ module MarsRover
           turn_left
         when "R"
           turn_right
+        when "M"
+          move
         end
       end
     end
@@ -26,6 +28,20 @@ module MarsRover
     def turn_right
       dir_index = ["N", "E", "S", "W"].find_index { |dir| dir == @heading }
       @heading = ["N", "E", "S", "W"][ (dir_index+1) % 4 ]
+    end
+
+    def move
+      case @heading
+      when "N"
+        @y+=1
+      when "W"
+        @x-=1
+      when "S"
+        @y-=1
+      when "E"
+        @x+=1
+      else
+      end
     end
   end
 end
