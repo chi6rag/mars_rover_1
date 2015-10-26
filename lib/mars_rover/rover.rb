@@ -1,9 +1,10 @@
 module MarsRover
   class Rover
-    def initialize(x, y, heading)
+    def initialize(x, y, heading, plateau)
       @x = x
       @y = y
       @heading = heading
+      @plateau = plateau
     end
 
     def execute *instructions
