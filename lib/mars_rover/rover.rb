@@ -7,6 +7,18 @@ module MarsRover
     end
 
     def execute *instructions
+      instructions.each do |instruction|
+        case instruction
+        when "L"
+          turn_left
+        end
+      end
+    end
+
+    private
+    def turn_left
+      dir_index = ["N", "E", "S", "W"].find_index { |dir| dir == @heading }
+      @heading = ["N", "E", "S", "W"][ (dir_index-1) % 4 ]
     end
   end
 end
