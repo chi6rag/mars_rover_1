@@ -1,6 +1,9 @@
 module MarsRover
   class Cli
     def start
+      # plateauIo = PlateauIo.new
+      
+      # plateauIo.fetch_coordinates
       print "Enter the coordinates of the plateau separated by space: "
       coordinates = gets.chomp.split(/\s+/).map(&:to_i)
       plateau = MarsRover::Plateau.new(coordinates[0], coordinates[1])

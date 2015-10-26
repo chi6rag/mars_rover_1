@@ -6,4 +6,10 @@ class PlateauTest < Test::Unit::TestCase
     plateau = MarsRover::Plateau.new(5,5)
     assert_equal plateau.class, MarsRover::Plateau
   end
+
+  def test_new_with_invalid_coordinates
+    assert_raise Exception do
+      MarsRover::Plateau.new("hello".to_i,"hi".to_i)
+    end
+  end
 end
